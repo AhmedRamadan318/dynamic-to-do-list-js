@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to add a new task
     function addTask(taskText, save = true) {
-        if (taskText.trim() === '') return; // Skip if taskText is empty
+        taskText = taskText.trim(); // Trim the task text
+        if (taskText === '') {
+            alert('Please enter a task');
+            return; // Exit the function if the taskText is empty
+        }
 
         // Create new list item
         const li = document.createElement('li');
